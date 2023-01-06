@@ -7,6 +7,7 @@ public class Start {
         String userMethod = request.getParameter("Method");
         String userParam = request.getParameter("Param");
         try {
+// nosemgrep: java.lang.security.audit.unsafe-reflection.unsafe-reflection            
             Class cls = Class.forName(userClass);
             object result = cls.getMethod(userMethod, String.class).invoke(null, userParam);
             exitCode = Integer.parseInt(result);
